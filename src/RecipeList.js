@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 const RecipeList = ({ recipes }) => {
@@ -9,7 +10,7 @@ const RecipeList = ({ recipes }) => {
                     <h2>{ recipe.title }</h2>
                     <article>{ recipe.time } minutes to cook</article>
                     <footer>{ recipe.method }</footer>
-                    <button>Cook this</button>
+                    <Link to={`/recipes/${recipe.id}`}>Cook this</Link>
                 </div>
             ))}
         </div>
