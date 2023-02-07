@@ -11,16 +11,17 @@ const Create = () => {
 
     return (
         <div className="create">
-            <h2>Add a new recepie</h2>
+            <h2>Add a new recipe</h2>
             <form >
-                <label>Recepie title:</label>
+                <label>Recipe title:</label>
                 <input 
+                    className="inp"
                     type="text"
                     required
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <label>Recepie ingredients:</label>
+                <label>Recipe ingredients:</label>
                 <input 
                     type="text"
                     required
@@ -28,14 +29,16 @@ const Create = () => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <button>Add</button>
-                <label>Recepie method:</label>
+                <label>Recipe method:</label>
                 <textarea 
+                    className="inp"
                     required
                     value={method}
                     onChange={(e) => setMethod(e.target.value)}
                 />
                 <label>Cooking time (in minutes):</label>
                 <input 
+                    className="inp"
                     type="number"
                     required
                     value={time}
