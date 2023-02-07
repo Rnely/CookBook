@@ -3,9 +3,18 @@ import { useState } from "react";
 
 const Create = () => {
     const [ title, setTitle] = useState('')
-    const [ ingredients, setIngredients ] = useState([])
+    const [ ingredients, setIngredients ] = useState('')
     const [ method, setMethod ] = useState('')
     const [ time, setTime ] = useState('')
+    const [ listIngredients, setListIngredients ] = useState([])
+
+    const handleIngredients = (e) => {
+        e.preventDefault()
+        setListIngredients([...listIngredients, ingredients])
+        setIngredients('')
+        console.log(listIngredients)
+
+    }
 
 
 
@@ -24,11 +33,11 @@ const Create = () => {
                 <label>Recipe ingredients:</label>
                 <input 
                     type="text"
-                    required
                     value={ingredients}
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) => setIngredients(e.target.value)}
                 />
-                <button>Add</button>
+                <button type="button" onClick={handleIngredients}>Add</button>
+                <p>Current ingredients: { listIngredients.toString() }</p>
                 <label>Recipe method:</label>
                 <textarea 
                     className="inp"
@@ -44,7 +53,7 @@ const Create = () => {
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
                 />
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )
