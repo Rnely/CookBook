@@ -46,6 +46,54 @@
       "method": "abc",
       "time": "10",
       "id": 4
+    },
+    {
+      "title": "Saucy Sriracha Franks",
+      "listIngredients": [
+        "1 cup ketchup",
+        "¼ cup soy sauce",
+        "¼ cup rice vinegar",
+        "3 tablespoons sriracha sauce",
+        "1 tablespoon brown sugar",
+        "1 teaspoon sesame oil",
+        "1 teaspoon grated ginger root",
+        "1 clove garlic, crushed",
+        "1 (12 ounce) package all-beef franks, cut into 1-inch slices",
+        " box toothpicks, or as needed"
+      ],
+      "method": "Mix ketchup, soy sauce, vinegar, sriracha, brown sugar, sesame oil, ginger, and garlic in a saucepan and bring to a simmer over low heat. Add franks and heat until warm, about 5 minutes. Serve with toothpicks.",
+      "time": "20",
+      "id": 5
+    },
+    {
+      "title": "PB & J Smoothie",
+      "listIngredients": [
+        "1 tablespoon flax seeds",
+        "1 tablespoon blue agave nectar, or more to taste",
+        "1 ½ tablespoons peanut butter",
+        "¾ cup milk",
+        "6 frozen strawberries, or more to taste"
+      ],
+      "method": "Combine strawberries, milk, peanut butter, blue agave, and flax seeds in a blender and blend until well combined.",
+      "time": "5",
+      "id": 6
+    },
+    {
+      "title": "Quick and Easy Pancit",
+      "listIngredients": [
+        "2 lemons - cut into wedges, for garnish",
+        "¼ cup soy sauce",
+        "4 carrot, thinly sliced",
+        "1 small head cabbage, thinly sliced",
+        "2 cups diced cooked chicken breast meat",
+        "3 cloves garlic, minced",
+        "1 onion, finely diced",
+        "1 teaspoon vegetable oil",
+        "1 (12 ounce) package dried rice noodles"
+      ],
+      "method": "Place rice noodles in a large bowl; cover with warm water and let soften for 8 to 10 minutes. Drain and set aside.\nMeanwhile, heat oil in a wok or large skillet over medium-low heat. Add onion and garlic; cook and stir until onion is tender, about 3 to 5 minutes. Stir in chicken, cabbage, carrots, and soy sauce. Cook until cabbage begins to soften. Toss in noodles and cook, stirring constantly, until heated through.\nTransfer pancit to a serving dish and garnish with lemon wedges.",
+      "time": "15",
+      "id": 7
     }
   ]
 }

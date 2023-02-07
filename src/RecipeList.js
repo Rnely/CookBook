@@ -9,6 +9,7 @@ const RecipeList = ({ recipes }) => {
                     <h2>{ recipe.title }</h2>
                     <article>{ recipe.time } minutes to cook</article>
                     <footer>{ recipe.method }</footer>
+                    <button>Cook this</button>
                 </div>
             ))}
         </div>
