@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 
 const Create = () => {
@@ -7,18 +8,21 @@ const Create = () => {
     const [ method, setMethod ] = useState('')
     const [ time, setTime ] = useState('')
     const [ listIngredients, setListIngredients ] = useState([])
+    const [ isPending, setIsPending] =  useState(false);
+
+    const nav = useNavigate()
 
     const handleIngredients = (e) => {
         e.preventDefault()
         setListIngredients([...listIngredients, ingredients])
         setIngredients('')
-        console.log(listIngredients)
-
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const recipe = {title, listIngredients, method, time}
+
+        setIsPending(true);
 
         fetch(' http://localhost:4000/recipes', {
             method: 'POST',
@@ -26,6 +30,8 @@ const Create = () => {
             body: JSON.stringify(recipe)
         }).then(() => {
             console.log("New recipe added")
+            setIsPending(false);
+            nav('/')
         })
     }
 
@@ -66,7 +72,8 @@ const Create = () => {
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
                 />
-                <button type="submit">Submit</button>
+                { !isPending && <button type="submit">Submit</button>}
+                { isPending && <button disabled>Submiting...</button>}
             </form>
         </div>
     )
