@@ -16,12 +16,25 @@ const Create = () => {
 
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const recipe = {title, listIngredients, method, time}
+
+        fetch(' http://localhost:4000/recipes', {
+            method: 'POST',
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify(recipe)
+        }).then(() => {
+            console.log("New recipe added")
+        })
+    }
+
 
 
     return (
         <div className="create">
             <h2>Add a new recipe</h2>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <label>Recipe title:</label>
                 <input 
                     className="inp"
