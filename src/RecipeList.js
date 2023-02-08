@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
+import { useAPI } from "./apiContext"
 
 
-const RecipeList = ({ recipes }) => {
+const RecipeList = () => {
+    const { recipes } = useAPI()
 
     return (
         <div className="recipe-list">

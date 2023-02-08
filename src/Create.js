@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useAPI } from "./apiContext";
 
 
 const Create = () => {
@@ -8,7 +9,7 @@ const Create = () => {
     const [ method, setMethod ] = useState('')
     const [ time, setTime ] = useState('')
     const [ listIngredients, setListIngredients ] = useState([])
-    const [ isPending, setIsPending] =  useState(false);
+    const { isPending, setIsPending } =  useAPI();
 
     const nav = useNavigate()
 
