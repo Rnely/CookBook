@@ -10,7 +10,9 @@ const RecipeList = ({ recipes }) => {
                     <h2>{ recipe.title }</h2>
                     <article>{ recipe.time } minutes to cook</article>
                     <footer>{ recipe.method }</footer>
-                    <Link to={`/recipes/${recipe.id}`}>Cook this</Link>
+                    <Link to={`/recipes/${recipe.id}`}>
+                        <button>Cook this</button>
+                    </Link>
                 </div>
             ))}
         </div>

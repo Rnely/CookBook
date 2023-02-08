@@ -119,7 +119,14 @@ code {
 .recipe-preview a{
   text-decoration: none;
 }
-
+.recipe-preview button {
+  background: rgb(132, 3, 192);
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 /* recipe details page */
 .recipe-details {
   padding: 10px 16px;
