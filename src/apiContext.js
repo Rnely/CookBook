@@ -7,6 +7,8 @@ export function APIContextProvider({ children }) {
   const [ isPending, setIsPending ] =  useState(false);
   const [ url, setUrl ] = useState('http://localhost:4000/recipes/')
 
+  const [query, setQuery] = useState("")
+
   useEffect(() => {
         fetch(url)
             .then(res => {
@@ -27,7 +29,9 @@ export function APIContextProvider({ children }) {
         url,
         setUrl,
         isPending,
-        setIsPending
+        setIsPending,
+        query,
+        setQuery
       }}
     >
       {children}
