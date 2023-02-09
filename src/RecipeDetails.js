@@ -26,7 +26,7 @@ const RecipeDetails = () => {
                 <article>
                     <h2>{ recipe.title }</h2>
                     <p>Takes { recipe.time } minutes to cook</p>
-                    <p className="ing">{recipe.listIngredients}</p>
+                    <p className="ing">{recipe.listIngredients.join(', ')}</p>
                     <div>{ recipe.method }</div>
                     <button onClick={handleClick}>Delete</button>
                 </article>
