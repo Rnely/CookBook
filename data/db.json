@@ -12,17 +12,6 @@
       "id": 2
     },
     {
-      "title": "asdas",
-      "listIngredients": [
-        "",
-        "asd",
-        "sdfsd"
-      ],
-      "method": "asd",
-      "time": "4",
-      "id": 3
-    },
-    {
       "title": "Saucy Sriracha Franks",
       "listIngredients": [
         "1 cup ketchup",
@@ -123,33 +112,6 @@
       "method": "y",
       "time": "1",
       "id": 13
-    },
-    {
-      "title": "h",
-      "listIngredients": [
-        "h"
-      ],
-      "method": "h",
-      "time": "1",
-      "id": 14
-    },
-    {
-      "title": "d",
-      "listIngredients": [
-        "d"
-      ],
-      "method": "d",
-      "time": "1",
-      "id": 15
-    },
-    {
-      "title": "h",
-      "listIngredients": [
-        "h"
-      ],
-      "method": "h",
-      "time": "1",
-      "id": 16
     }
   ]
 }

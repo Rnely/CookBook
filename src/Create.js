@@ -9,7 +9,7 @@ const Create = () => {
     const [ method, setMethod ] = useState('')
     const [ time, setTime ] = useState('')
     const [ listIngredients, setListIngredients ] = useState([])
-    const { isPending, setIsPending } =  useAPI();
+    const { isPending, setIsPending, url } =  useAPI();
 
     const nav = useNavigate()
 
@@ -25,7 +25,7 @@ const Create = () => {
 
         setIsPending(true);
 
-        fetch(' http://localhost:4000/recipes', {
+        fetch(url, {
             method: 'POST',
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(recipe)

@@ -1,15 +1,19 @@
 import { useNavigate, useParams } from "react-router-dom";
+import { useAPI } from "./apiContext";
 import useFetch from "./useFetch";
 
 const RecipeDetails = () => {
-    const nav = useNavigate();
-    const { id } = useParams();
-    const { data: recipe, error, isPending } = useFetch('http://localhost:4000/recipes/' + id);
+    const nav = useNavigate()
+    const { id } = useParams()
+    const { url, setIsPending } = useAPI()
+    const { data: recipe, error, isPending } = useFetch(url + id);
 
     const handleClick= () => {
-        fetch('http://localhost:4000/recipes/' + recipe.id, {
+        setIsPending(true)
+        fetch(url + recipe.id, {
             method: 'DELETE'
         }).then(() => {
+            setIsPending(false)
             nav('/');
         })
     }
