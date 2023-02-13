@@ -1,3 +1,11 @@
+# Startup
+
+ ### `npm run startdb`
+ Starts the json-server for data.
+ 
+ ### `npm start`
+ Runs the app in the development mode.
+ 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
