@@ -13,18 +13,19 @@ const recipeSlice = createSlice({
         recipes: [],
         loading: false,
     },
-    extraReducers: {
-        [getRecipes.pending]: (state, action) => {
-            state.loading = true
-        },
-        [getRecipes.fulfilled]: (state, action) => {
-            state.loading = false
-            state.recipes = action.payload
-        },
-        [getRecipes.rejected]: (state, action) => {
-            state.loading = false
-        },
-    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getRecipes.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(getRecipes.fulfilled, (state, action) => {
+                state.loading = false
+                state.recipes = action.payload
+            })
+            .addCase(getRecipes.rejected, (state, action) => {
+                state.loading = false
+            })
+    }
 })
 
 export default recipeSlice.reducer
