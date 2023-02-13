@@ -5,9 +5,9 @@ import { setQuery } from "./redux/slices/querySlice";
 const Navbar = () => {
     const query = useSelector(
         (state) => state.recipeFilter.query
-        )
+    )
         
-        const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     return (
         <nav className="navbar">
