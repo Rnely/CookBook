@@ -1,8 +1,7 @@
 # Startup
 
- ### `npm run` 
- startdb (to start the json-server)
- 
+ ### `npm run startdb`
+ Starts the json-server for data.
  ### `npm start`
  Runs the app in the development mode.
 
