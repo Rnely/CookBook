@@ -7,15 +7,13 @@ const RecipeDetails = () => {
 
     const nav = useNavigate()
     const { id } = useParams()
-    const { url, setIsPending } = useAPI()
+    const { url } = useAPI()
     const { data: recipe, error, isPending } = useFetch(url + id);
 
     const handleClick= () => {
-        setIsPending(true)
         fetch(url + recipe.id, {
             method: 'DELETE'
         }).then(() => {
-            setIsPending(false)
             nav('/');
         })
     }
