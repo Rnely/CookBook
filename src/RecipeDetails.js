@@ -1,13 +1,16 @@
-
 import { useNavigate, useParams } from "react-router-dom";
-import { useAPI } from "./apiContext";
 import useFetch from './useFetch'; 
+import { useSelector } from "react-redux";
 
 const RecipeDetails = () => {
 
     const nav = useNavigate()
     const { id } = useParams()
-    const { url } = useAPI()
+
+    const url = useSelector(
+        (state) => state.url.url
+    )
+
     const { data: recipe, error, isPending } = useFetch(url + id);
 
     const handleClick= () => {

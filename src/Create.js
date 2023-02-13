@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { useAPI } from "./apiContext";
 import { setPending } from "./redux/slices/pendingSlice";
 
 
@@ -11,8 +10,10 @@ const Create = () => {
     const [ method, setMethod ] = useState('')
     const [ time, setTime ] = useState('')
     const [ listIngredients, setListIngredients ] = useState([])
-    const { url } =  useAPI();
 
+    const url = useSelector(
+        (state) => state.url.url
+    )
     const isPending = useSelector(
         (state) => state.pending
     )
