@@ -5,7 +5,7 @@ const APIContext = createContext();
 export function APIContextProvider({ children }) {
   const [ recipes, setRecipes ] = useState([]);
   const [ isPending, setIsPending ] =  useState(false);
-  const [ url, setUrl ] = useState('http://localhost:4000/recipes/')
+  const [ url, setUrl ] = useState('http://localhost:3000/recipes/')
 
   const [query, setQuery] = useState("")
 
