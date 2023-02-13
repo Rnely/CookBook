@@ -77,6 +77,7 @@ const Create = () => {
                 <input 
                     className="inp"
                     type="number"
+                    min="0"
                     required
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
