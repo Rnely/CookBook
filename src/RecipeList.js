@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom"
 import { useAPI } from "./apiContext"
+import { useSelector } from "react-redux"
 
 
 const RecipeList = () => {
-    const { recipes, query } = useAPI()
+    const { recipes } = useAPI()
+
+    const query = useSelector(
+        (state) => state.recipeFilter.query
+        )
 
     return (
         <div className="recipe-list">

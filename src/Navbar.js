@@ -1,15 +1,22 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useAPI } from "./apiContext";
+import { setQuery } from "./redux/slices/querySlice";
 
 const Navbar = () => {
-    const { setQuery } = useAPI()
+    const query = useSelector(
+        (state) => state.recipeFilter.query
+        )
+        
+        const dispatch = useDispatch()
 
     return (
         <nav className="navbar">
             <h1>Cook Book</h1>
             <div className="search">
                 <label>Search: </label>
-                <input placeholder="Enter Recipe Title" onChange={(e) => setQuery(e.target.value)} />
+                <input placeholder="Enter Recipe Title" onChange={(e) => 
+                    dispatch(setQuery(e.target.value))
+                    } />
             </div>
             <div className="links">
                 <Link to="/">Home</Link>
