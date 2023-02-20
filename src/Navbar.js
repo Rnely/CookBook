@@ -1,11 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setQuery } from "./redux/slices/querySlice";
 
 const Navbar = () => {
-    const query = useSelector(
-        (state) => state.recipeFilter.query
-    )
         
     const dispatch = useDispatch()
 

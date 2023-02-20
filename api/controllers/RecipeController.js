@@ -19,7 +19,7 @@ export const getRecipeById = async (req, res) => {
 }
  
 export const saveRecipe = async (req, res) => {
-    const recipe = new recipe(req.body);
+    const recipe = new Recipe(req.body);
     try {
         const insertedRecipe = await recipe.save();
         res.status(201).json(insertedRecipe);

@@ -1,39 +1,43 @@
 import { useNavigate, useParams } from "react-router-dom";
-import useFetch from './useFetch'; 
-import { useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const RecipeDetails = () => {
+
+    const [recipe, setRecipe] = useState([])
+    const [listIng, setListIng] = useState([])
 
     const nav = useNavigate()
     const { id } = useParams()
 
-    const url = useSelector(
-        (state) => state.url.url
-    )
+    useEffect(() => {
+        getRecipe();
+    }, []);
 
-    const { data: recipe, error, isPending } = useFetch(url + id);
+    const getRecipe = async () => {
+        const response = await axios.get(`http://localhost:3000/recipes/${id}`);
+        setRecipe(response.data)
+        setListIng(response.data.listIngredients)
+      };
 
-    const handleClick= () => {
-        fetch(url + recipe.id, {
-            method: 'DELETE'
-        }).then(() => {
-            nav('/');
-        })
-    }
+    const handleClick = async () => {
+        try {
+            await axios.delete(`http://localhost:3000/recipes/${id}`);
+            nav("/")
+          } catch (error) {
+            console.log(error);
+          }
+        };
  
     return ( 
         <div className="recipe-details">
-            { isPending && <div>Loading...</div>}
-            { error && <div>{error}</div>}
-            { recipe && (
                 <article>
                     <h2>{ recipe.title }</h2>
                     <p>Takes { recipe.time } minutes to cook</p>
-                    <p className="ing">{recipe.listIngredients.join(', ')}</p>
+                    <p className="ing">{listIng.join(", ")}</p>
                     <div>{ recipe.method }</div>
                     <button onClick={handleClick}>Delete</button>
                 </article>
-            )}
         </div>
      );
 }
